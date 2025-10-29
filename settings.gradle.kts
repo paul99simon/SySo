@@ -11,4 +11,5 @@ plugins {
 }
 
 rootProject.name = "U01"
-include("src")
+include("java")
+project(":java").projectDir = file("src/java")
