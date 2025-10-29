@@ -1,13 +1,26 @@
 #.vscode
 .vscode
+
+#build
 bin
+build
 
 #LaTeX
+#LaTeX
+*.aux
+*.out
+*.fls
+*.fdb_latexmk
+*.log
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.snm
+*.nav
 
 
 # Ignore Gradle project-specific cache directory
 .gradle
 gradle.properties
 
-# Ignore Gradle build output directory
-build

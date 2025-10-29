@@ -1,0 +1,53 @@
+\documentclass[10pt, leqno]{article}
+
+\usepackage{diagbox}
+\usepackage{array}
+\usepackage{float}
+
+\begin{document}
+    \subsubsection*{A1}
+    Ein \textbf{Programm} ist eine kodierte Folge von Anweisungen die, nach eventueller Übersetzung, von einem Prozessor ausgeführt werden können.
+    \\\\
+    Ein \textbf{Prozess} ist ein vom Betriebssystem instanziertes Programm. Ein Prozess verfügt über Eigenschaften, die es dem Betriebssystem ermöglichen effizient die Resourcen der Hardware auf die laufenden Prozesse aufzuteilen.
+    \\\\
+    Der Begriff \textbf{Thread} bezeichnet zwei sich ähnelnde Konzepte.
+    \begin{itemize}
+        \item \textbf{Logische Threads} dienen zur parallelisierung innerhalb eines Prozess.
+        So können mehrere Abschnitte eines Programms gleichzeitig ausgeführt werden.
+        Der Scheduler eines Betriebssystems verteilt die Resourcen der Hardware auf diese Threads.
+        Ein Prozess kann aus beliebig vielen Threads bestehen. 
+        \item \textbf{physische Threads} sind die tatsächlichen Threads, die ein Prozessorkern parallel ablaufen lassen kann.
+        Die meisten modernen Prozessoren unterstützen zwei Threads pro Kern.  
+    \end{itemize}
+    \subsubsection*{A2}
+    Das Amdahlsche Gesetz berechnet den Speedup $\eta_S$ durch:
+    $$\eta_S = \frac{T}{t_s + \frac{t_p}{n_p}}$$
+    Es ergibt sich die folgende Tabelle
+    
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{c | c | c | c | c}
+            \diagbox{$t_p = $}{$2x$ Kerne} & $x = 0$ & $x = 1$ & $x = 2$ & $x = 3$\\\hline
+            0.25 & undef. & 1.14 & 1.23 & 1.26 \\\hline
+            0.5  & under. & 1.33 & 1.60 & 1.71 \\\hline
+            0.75 & undef. & 1.60 & 2.29 & 2.67 \\\hline
+        \end{tabular}
+    \end{table}
+    
+    Könnte es sein, dass $2^x$ gemeint war in der Aufgabe? Dann sähe die Tabelle wie folgt aus
+    
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{c | c | c | c | c}
+            \diagbox{$t_p = $}{$2^x$ Kerne} & $x = 0$ & $x = 1$ & $x = 2$ & $x = 3$\\\hline
+            0.25 & 1.00 & 1.14 & 1.23 & 1.28 \\\hline
+            0.5 & 1.00 & 1.33 & 1.60 & 1.78 \\\hline
+            0.75 & 1.00 & 1.60 & 2.29 & 2.91 \\\hline
+        \end{tabular}
+    \end{table}
+    
+    \subsubsection*{A3}
+    
+
+
+\end{document}
