@@ -3,6 +3,15 @@
 \usepackage{diagbox}
 \usepackage{array}
 \usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Define bash language safely (no $ errors)
+\lstset{
+  language=bash,
+  basicstyle=\ttfamily
+}
 
 \begin{document}
     \subsubsection*{A1}
@@ -47,7 +56,29 @@
     \end{table}
     
     \subsubsection*{A3}
-    
-
-
+    Wir starten das Programm mit:
+    \begin{lstlisting}
+    ./gradlew run_Counter --args="/usr/src/ .*\\.c$"
+    \end{lstlisting}
+    und erhalten als Output:
+    \begin{verbatim}
+        1 threads found 235389 lines in 803 ms
+        2 threads found 235389 lines in 727 ms
+        3 threads found 235389 lines in 694 ms
+        4 threads found 235389 lines in 708 ms
+        5 threads found 235389 lines in 720 ms
+        6 threads found 235389 lines in 691 ms
+        7 threads found 235389 lines in 693 ms
+        8 threads found 235389 lines in 693 ms
+        9 threads found 235389 lines in 696 ms
+        10 threads found 235389 lines in 693 ms
+        11 threads found 235389 lines in 691 ms
+        12 threads found 235389 lines in 696 ms
+        13 threads found 235389 lines in 692 ms
+        14 threads found 235389 lines in 689 ms
+        15 threads found 235389 lines in 693 ms
+        16 threads found 235389 lines in 703 ms
+    \end{verbatim}
+    Der Einsatz mehrerer Threads bringt nur eine kleine Beschleunigung (ca. 14 \% gegenüber einem Thread),danach keine nennenswerte Verbesserung.
+    Ein Grund könnte sein, dass die Aufgabe stark I/O-gebunden ist.
 \end{document}
